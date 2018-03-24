@@ -7,4 +7,7 @@ key insights from the dataset. From investigating the dataset, these calls were 
 ![Investigation Regions](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/cool%20thing%20part%201%20a.PNG)
 ![Support Regions](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/cool%20thing%20part%201%20b.PNG/)
 This finding shows that these types of units can be located near these regions, which can improve responce time and effectiveness.
-2. 
+2. I've looked into different priorities and how often they change. To investigate this, I have created a heat map that looks at the differences between original priorities and final priorities.
+![Change in Call Priority Heat Map](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Lower%20SF%20Original%20vs%20Final%20Prio%20Heat%20Map.PNG)
+The heat map above shows the change in call priority in lower San Fransisco. The spectrum towards the orange shows that the priority increased after receiving the call and the spectrum towards blue indicates the priority decreased after receiving calls. It is also important to know that I have converted numerical priorities as numbers that continue after 2 and 3. For *Lower SF*, the heat map is pretty constant which indicates that the priority assesment is done properly.
+![Change in Call Priority Heat Map: Financial District](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Financial%20Dist%20Original%20vs%20Final%20Prio%20Heat%20Map.PNG)
