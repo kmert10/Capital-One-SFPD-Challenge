@@ -4,7 +4,7 @@ key insights from the dataset. From investigating the dataset, these calls were 
 ## Optimizations & Analysis:
 ***Data Visuals: Display or graph 3 metrics or trends from the data set that are interesting to you.***
 1. The first trend I found interesting in the data set was the units sent to certain calls in certain areas. In order to analyze this trend, I plotted sent unit types for calls in every region/location in San Fransisco. This revealed that two unit types,"Investigation" and "Support", had only specific regions that were called in the given region. These two plots are shown below:
-![Investigation Regions](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/cool%20thing%20part%201%20a.PNG?raw=true)
+![Investigation Regions](Website Graphs Images/cool thing part 1 a.PNG?raw=true)
 ![Support Regions](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/cool%20thing%20part%201%20b.PNG?raw=true)
 This finding shows that these types of units can be located near these regions, which can improve responce time and effectiveness.
 2. I've looked into different priorities and how often they change. To investigate this, I have created a heat map that looks at the differences between original priorities and final priorities.
