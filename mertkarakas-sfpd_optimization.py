@@ -63,5 +63,6 @@ layout = go.Layout(
     title='Stacked Bar with Pandas'
 )
 
-fig = go.Figure(data=data, layout=layout)
+fig = go.Figure(data=dt, layout=layout)
+url = py.plot(dt, filename='pandas-bar-chart-layout')
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
