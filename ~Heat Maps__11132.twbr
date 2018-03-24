@@ -641,12 +641,12 @@
       <column caption='Transport Timestamp' datatype='string' name='[transport_timestamp]' role='dimension' type='nominal' />
       <column caption='Unit Id' datatype='string' name='[unit_id]' role='dimension' type='nominal' />
       <column caption='Unit Sequence In Call Dispatch' datatype='integer' name='[unit_sequence_in_call_dispatch]' role='measure' type='quantitative' />
-      <column caption='Unit Type' datatype='string' name='[unit_type]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Unit Type' datatype='string' name='[unit_type]' role='dimension' type='nominal' />
       <column caption='Watch Date' datatype='date' name='[watch_date]' role='dimension' type='ordinal' />
       <column caption='Zipcode Of Incident' datatype='integer' default-format='*00000' name='[zipcode_of_incident]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
       <column-instance column='[final_priority]' derivation='None' name='[none:final_priority:ok]' pivot='key' type='ordinal' />
       <column-instance column='[original_priority]' derivation='None' name='[none:original_priority:nk]' pivot='key' type='nominal' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.46587' measure-ordering='alphabetic' measure-percentage='0.53413' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.555556' measure-ordering='alphabetic' measure-percentage='0.444444' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:original_priority:nk]' palette='red_10_0' type='palette'>
@@ -788,7 +788,9 @@
           </mapsources>
           <datasource-dependencies datasource='federated.0uvswq719xggjr11vtiv711z9d8j'>
             <column-instance column='[unit_type]' derivation='None' name='[none:unit_type:nk]' pivot='key' type='nominal' />
-            <column caption='Unit Type' datatype='string' name='[unit_type]' role='dimension' type='nominal' />
+            <column-instance column='[zipcode_of_incident]' derivation='None' name='[none:zipcode_of_incident:ok]' pivot='key' type='ordinal' />
+            <column aggregation='CountD' caption='Unit Type' datatype='string' name='[unit_type]' role='dimension' type='nominal' />
+            <column caption='Zipcode Of Incident' datatype='integer' default-format='*00000' name='[zipcode_of_incident]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -823,17 +825,29 @@
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
-              <breakdown value='auto' />
+              <breakdown value='on' />
             </view>
-            <mark class='Multipolygon' />
+            <mark class='Automatic' />
             <encodings>
               <color column='[federated.0uvswq719xggjr11vtiv711z9d8j].[none:unit_type:nk]' />
-              <geometry column='[federated.0uvswq719xggjr11vtiv711z9d8j].[Geometry (generated)]' />
             </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
-        <cols />
+        <cols>[federated.0uvswq719xggjr11vtiv711z9d8j].[none:zipcode_of_incident:ok]</cols>
       </table>
     </worksheet>
   </worksheets>

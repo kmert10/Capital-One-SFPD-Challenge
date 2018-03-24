@@ -12,6 +12,7 @@ from  matplotlib import pyplot
 import seaborn
 import plotly.plotly as py
 import plotly.graph_objs as go
+from datetime import datetime
 seaborn.set(style='ticks')
 
 
@@ -62,7 +63,23 @@ layout = go.Layout(
     barmode='stack',
     title='Stacked Bar with Pandas'
 )
-
 fig = go.Figure(data=dt, layout=layout)
-url = py.plot(dt, filename='pandas-bar-chart-layout')
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
+
+format = '%Y-%m-%d %H:%M:%S'
+timeRec = []
+timeResp = []
+timeDiff = []
+for t in range(len(data)):
+    if isinstance(data['received_timestamp'].loc[t], str):
+        timeRec.append(data['received_timestamp'].loc[t][:19])
+    else:
+        timeRec.append('')
+    if isinstance(data['response_timestamp'].loc[t], str):   
+        timeResp.append(data['response_timestamp'].loc[t][:19])
+    else:
+        timeResp.append('')
+
+for i in range(len(timeRec)):
+    if (timeRec[i] != '') and (timeResp[i] != ''):
+        timeDiff.append(((datetime.strptime(timeRec[i], format) - datetime.strptime(timeResp[i], format)).seconds//60)%60)
