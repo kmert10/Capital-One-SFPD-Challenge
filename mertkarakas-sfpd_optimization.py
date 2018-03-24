@@ -29,7 +29,7 @@ hour = pd.Series(hours)
 d = {'Time (Hour)':hour, 'Zip Codes':data['zipcode_of_incident'], 'unit_type':data['unit_type']}
 ut = pd.DataFrame(data=d)
 units = np.unique(ut['unit_type'])
-fg = seaborn.FacetGrid(data=ut[0:2000], hue='unit_type', hue_order=units,size=10, aspect=1.61)
+fg = seaborn.FacetGrid(data=ut[0:5000], hue='unit_type', hue_order=units,size=10, aspect=1.61)
 fg.map(pyplot.scatter, 'Time (Hour)', 'Zip Codes').add_legend()
 
 days = []
@@ -63,5 +63,9 @@ layout = go.Layout(
     title='Stacked Bar with Pandas'
 )
 
-fig = go.Figure(data=data, layout=layout)
+fig = go.Figure(data=dt, layout=layout)
+
+iris = seaborn.load_dataset('sfpd_dispatch_data_subset.csv')
+g = seaborn.PairGrid(iris)
+g.map(pyplot.scatter);
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
