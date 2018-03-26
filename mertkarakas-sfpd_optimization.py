@@ -66,7 +66,6 @@ layout = go.Layout(
 
 fig = go.Figure(data=dt, layout=layout)
 
-<<<<<<< HEAD
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
 
 format = '%H:%M:%S'
@@ -87,9 +86,7 @@ for i in range(len(timeRec)):
     if (timeRec[i] != '') and (timeResp[i] != ''):
         timeDiff.append(((datetime.strptime(timeRec[i], format) - datetime.strptime(timeResp[i], format)).seconds//60)%60)
                           
-=======
 iris = seaborn.load_dataset('sfpd_dispatch_data_subset.csv')
 g = seaborn.PairGrid(iris)
 g.map(pyplot.scatter);
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
->>>>>>> master
