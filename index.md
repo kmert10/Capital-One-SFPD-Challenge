@@ -21,6 +21,7 @@ In order to address this question, first, I created a scatter plot to see what m
 ![Scatter Zip Unit Hour](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Scatter%20plot%20of%20zipcodes%20vs%20hours%20of%20units.png?raw=true)
 This scatter plot of a portion of the given dataset, which we can use as a tool to understand the correlation. The y-axis of the plot represents the two least-significant digits of the zip codes, the x-axis represents the time in hours a and the color represents the unit types, which is shown in the legend. Although this scatter plot shows just a random portion of the dataset, it is important to notice the ratio of each unit. The first thing we notice is that the plot is green and pink dominant, which means that in each hour of the day, there is a need for a "Truck" and a "Medic". A need for an "Engine" starts early in the morning while a need for the "Chief" and the "Private" starts in the noon. If we look at the figure: 
 ![San Fransisco Zip Code Map](http://www.healthysf.org/bdi/outcomes/images/zip-map.jpg?raw=true) 
+
 we can us this map to decode the y-axis of the plot and cross reference the addresses of required units. 
 
 
