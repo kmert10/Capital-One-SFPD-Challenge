@@ -30,7 +30,7 @@ hour = pd.Series(hours)
 d = {'Time (Hour)':hour, 'Zip Codes':data['zipcode_of_incident'], 'unit_type':data['unit_type']}
 ut = pd.DataFrame(data=d)
 units = np.unique(ut['unit_type'])
-fg = seaborn.FacetGrid(data=ut[0:2000], hue='unit_type', hue_order=units,size=10, aspect=1.61)
+fg = seaborn.FacetGrid(data=ut[0:5000], hue='unit_type', hue_order=units,size=10, aspect=1.61)
 fg.map(pyplot.scatter, 'Time (Hour)', 'Zip Codes').add_legend()
 
 days = []
@@ -63,23 +63,26 @@ layout = go.Layout(
     barmode='stack',
     title='Stacked Bar with Pandas'
 )
+
 fig = go.Figure(data=dt, layout=layout)
+
 # 3. Which areas take the longest time to dispatch to on average? How can this be reduced?
 
-format = '%Y-%m-%d %H:%M:%S'
+format = '%H:%M:%S'
 timeRec = []
 timeResp = []
 timeDiff = []
 for t in range(len(data)):
     if isinstance(data['received_timestamp'].loc[t], str):
-        timeRec.append(data['received_timestamp'].loc[t][:19])
+        timeRec.append(data['received_timestamp'].loc[t].split()[1][:8])
     else:
         timeRec.append('')
     if isinstance(data['response_timestamp'].loc[t], str):   
-        timeResp.append(data['response_timestamp'].loc[t][:19])
+        timeResp.append(data['response_timestamp'].loc[t].split()[1][:8])
     else:
         timeResp.append('')
 
 for i in range(len(timeRec)):
     if (timeRec[i] != '') and (timeResp[i] != ''):
         timeDiff.append(((datetime.strptime(timeRec[i], format) - datetime.strptime(timeResp[i], format)).seconds//60)%60)
+                          
