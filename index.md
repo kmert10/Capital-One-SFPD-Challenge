@@ -15,8 +15,11 @@ Looking at the heat map of the *Financial Disctrict's* heat map, it is pretty si
 3. Considering the available unit types, the most common units dispatched are: Medics, Engine and Chief. A neat heat map that shows this is given below.
 ![Priority vs Unit Type Heat Map: Financial District](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Downtown%20Unit%20Type%20vs%20Original%20Prio%20Heat%20Map.PNG?raw=true)
 The majority of the dots are from these three unit types and it clear that these units are assigned higher original priorities. This claim can be relatable beacuse in an emergency that might be life threataning, these three units are the ones that basically will save lives or many people.
+
 ***Given an address and time, what is the most likely dispatch to be required?***
 In order to address this question, first, I created a scatter plot to see what might be correlated.
-![Scatter Zip Unit Hour](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Downtown%20Unit%20Type%20vs%20Original%20Prio%20Heat%20Map.PNG?raw=true)
+![Scatter Zip Unit Hour](https://github.com/kmert10/Capital-One-SFPD-Challenge/blob/master/Website%20Graphs%20Images/Scatter%20plot%20of%20zipcodes%20vs%20hours%20of%20units.png?raw=true)
+This scatter plot of a portion of the given dataset, which we can use as a tool to understand the correlation. The y-axis of the plot represents the two least-significant digits of the zip codes, the x-axis represents the time in hours a and the color represents the unit types, which is shown in the legend. Although this scatter plot shows just a random portion of the dataset, it is important to notice the ratio of each unit. The first thing we notice is that the plot is green and pink dominant, which means that in each hour of the day, there is a need for a "Truck" and a "Medic". A need for an "Engine" starts early in the morning while a need for the "Chief" and the "Private" starts in the noon. If we look at the figure ![San Fransisco Zip Code Map](http://www.healthysf.org/bdi/outcomes/images/zip-map.jpg?raw=true) to decode the y-axis of the plot.
+
 
 ***Which areas take the longest time to dispatch to on average? How can this be reduced?***
