@@ -1,9 +1,4 @@
 This challenge by Capital One requires a deep analysis of the public data from the San Francisco Fire Department that contains dispatch 
-<<<<<<< HEAD
-information for emergency calls, with call time, location, and dispatch. Using this dataset, I have generated custom graphs to understand 
-key insights from the dataset. 
-## Opmizations & Analysis:
-=======
 information for emergency calls, with call time, location, and dispatch. Using this dataset, I have generated custom graphs to understand
 key insights from the dataset. From investigating the dataset, these calls were made between 01/13/2018 - 01/24/2018.
 ## Optimizations & Analysis:
@@ -27,8 +22,7 @@ In order to address this question, first, I created a scatter plot to see what m
 This scatter plot of a portion of the given dataset, which we can use as a tool to understand the correlation. The y-axis of the plot represents the two least-significant digits of the zip codes, the x-axis represents the time in hours a and the color represents the unit types, which is shown in the legend. Although this scatter plot shows just a random portion of the dataset, it is important to notice the ratio of each unit. The first thing we notice is that the plot is green and pink dominant, which means that in each hour of the day, there is a need for a "Truck" and a "Medic". A need for an "Engine" starts early in the morning while a need for the "Chief" and the "Private" starts in the noon. If we look at the figure: 
 ![San Fransisco Zip Code Map](http://www.healthysf.org/bdi/outcomes/images/zip-map.jpg?raw=true) 
 
-we can us this map to decode the y-axis of the plot and cross reference the addresses of required units. 
+we can us this map to decode the y-axis of the plot and cross reference the addresses of required units. When the calls gets closer to more populated areas such as Downtown San Fransisco, the number of security units dispatched increases and it is noticable from the plot. When we look at the calls closure to rural San Fransisco, we can clearly see that "Medics" and health related units are sent more during every hour of the day. 
 
 
 ***Which areas take the longest time to dispatch to on average? How can this be reduced?***
->>>>>>> master
